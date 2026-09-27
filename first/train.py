@@ -4,10 +4,13 @@ import numpy as np
 
 
 import torch
+print("PyTorch version:", torch.__version__)
+print("PyTorch loaded successfully!")
+
 import torch.nn as nn
 # form torch.utils.data import Dataset, DataLoader
 from torch.utils.data import Dataset, DataLoader
-# from nltk_utils import tokenize, stem, bag_of_words
+from nltk_utils import tokenize, stem, bag_of_words
 
 from model import NeuralNet
 
@@ -68,12 +71,17 @@ hidden_size = 8
 output_size = len(tags)
 input_size = len(X_train[0])
 print(input_size, len(all_words))
+print(output_size, tags)
+
 
 
 dataset = ChatDataset() 
 train_loader = DataLoader(dataset=dataset, batch_size=batch_size , shuffle=True, num_workers=2)
 
 
-model = NeuralNet(input_size=len(X_train[0]), hidden_size=8, num_classes=len(tags))
+# model = NeuralNet(input_size=len(X_train[0]), hidden_size=8, num_classes=len(tags))
+model = NeuralNet(input_size, hidden_size, output_size)  # Corrected line)
+
+
 
 
