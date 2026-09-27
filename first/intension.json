@@ -4,6 +4,24 @@
             "tag": "greeting",
             "patterns": ["Hi", "Hello", "Hey", "if anyone there", "Good morning", "Good evening"],
             "responses": ["Hello!", "Hi there!", "Greetings!", "How can I assist you today?"]
+        },
+        {
+            "tag": "goodbye",
+            "patterns": ["Bye", "See you later", "Goodbye", "Catch you later"],
+            "responses": ["Goodbye!", "See you later!", "Take care!"]
+        },
+        {
+            "tag": "thanks",
+            "patterns": ["Thanks", "Thank you", "That's helpful", "Thanks a lot"],
+            "responses": ["You're welcome!", "No problem!", "Glad I could help!"]
+        },
+        {
+            "tag": "noanswer",
+            "patterns": [],
+            "responses": ["I'm not sure how to respond to that.", "Can you please rephrase?", "I don't have an answer for that."]
         }
+
+        
+
     ]
 }
