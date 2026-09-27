@@ -60,3 +60,4 @@ bag = bag_of_words(a, all_words)
 
 print("Bag of Words:")
 print(bag)
+

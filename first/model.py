@@ -1,3 +1,4 @@
+#from model import NeuralNet
 import torch
 import torch.nn as nn
 
