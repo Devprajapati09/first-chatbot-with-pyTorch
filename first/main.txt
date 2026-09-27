@@ -1,0 +1,2 @@
+1.) Theory + NLP concepts ( stemming, tokenization, bag of word)
+2.) Create traning data 
