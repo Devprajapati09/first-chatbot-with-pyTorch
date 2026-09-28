@@ -19,6 +19,13 @@
             "tag": "noanswer",
             "patterns": [],
             "responses": ["I'm not sure how to respond to that.", "Can you please rephrase?", "I don't have an answer for that."]
+        },
+
+        {
+            "tag": "name",
+            "patterns": ["what is your name", "what is your name?", "who are you","who are you?","can you tell me your name","tell me your name","what should I call you"],
+            "responses": ["You can call me Hacker.", "I am an AI created to help you."]
+
         }
 
         
