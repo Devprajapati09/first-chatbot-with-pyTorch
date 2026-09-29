@@ -1,3 +1,6 @@
 1.) Theory + NLP concepts ( stemming, tokenization, bag of word)
 2.) Create traning data 
-3.)PyTorch model and traning
+3.) PyTorch model and traning
+     when we do an intesert or change the value after the work flow is to run the code:
+     code in the terminal: python train.py --> python chat.py
+4.) Save/load model and implement the chat

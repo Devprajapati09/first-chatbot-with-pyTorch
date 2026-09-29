@@ -30,33 +30,29 @@ model.eval()
 
 
 botname = "Hacker"
-print("Let's chat! (type 'quit' to exit)")
-while True:
-        sentence = input("You: ")
-        if sentence == "quit":
-            break
 
-        sentence = tokenize(sentence)           #here it defines from the train.py file, it is a function that ''' tokenizes ''' the sentence into words
-        X = bag_of_words(sentence, all_words)
-        X = X.reshape(1, X.shape[0])           #reshapes the array into a 2D array with one row and as many columns as there are elements in the original array
-        X = torch.from_numpy(X) #X = torch.from_numpy(X).to(device)
+def get_response(msg):
+    sentence = tokenize(msg)           #here it defines from the train.py file, it is a function that ''' tokenizes ''' the sentence into words
+    X = bag_of_words(sentence, all_words)
+    X = X.reshape(1, X.shape[0])           #reshapes the array into a 2D array with one row and as many columns as there are elements in the original array
+    X = torch.from_numpy(X) #X = torch.from_numpy(X).to(device)
 
 
-
-        output = model(X)
-        _, predicted = torch.max(output, dim=1)
-        tag = tags[predicted.item()]            #define from the intension.json file, it is a list of tags that correspond to the intents 
-
-
-        probs = torch.softmax(output, dim=1)
-        prob = probs[0][predicted.item()]
+    output = model(X)
+    _, predicted = torch.max(output, dim=1)
+    tag = tags[predicted.item()]            #define from the intension.json file, it is a list of tags that correspond to the intents 
 
 
-        if prob.item() > 0.75:                    #if the probability of the predicted tag is greater than 0.75, it will print a random response from the list of responses for that tag     
-            for intent in intents['intents']:
-                if tag == intent["tag"]:
-                    print(f"{botname}: {random.choice(intent['responses'])}")                 #define from the intension.json file
+    probs = torch.softmax(output, dim=1)
+    prob = probs[0][predicted.item()]
 
 
-        else:
-            print(f"{botname}: I do not understand...")
+   
+    if prob.item() > 0.75:                    #if the probability of the predicted tag is greater than 0.75, it will print a random response from the list of responses for that tag     
+        for intent in intents['intents']:
+            if tag == intent["tag"]:
+                return random.choice(intent['responses'])                #define from the intension.json file,  it is a list of tags that correspond to the intents 
+
+    return "I do not understand..."
+
+    

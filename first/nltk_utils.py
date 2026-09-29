@@ -6,10 +6,23 @@ from nltk.stem.porter import PorterStemmer
 stemmer = PorterStemmer()
 
 def tokenize(sentence):
+    '''
+    split sentence into array of words/tokens
+    A token can be a word or punctuation character, or number.
+    '''
     return nltk.word_tokenize(sentence)
 
+
 def stem(word):
+    '''
+    find root form of root word. 
+    ex:
+    words = ["organize", "organization", "organizing"]
+    words = [stem(w) for w in words] 
+    --> ["organ", "organ", "organ"]
+    '''
     return stemmer.stem(word.lower())
+
 
 def bag_of_words(tokenized_sentence, all_words):
     #pass       # at the place of the pass i write this 

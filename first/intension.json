@@ -6,7 +6,7 @@
             "responses": ["Hello!", "Hi there!", "Greetings!", "How can I assist you today?"]
         },
         {
-            "tag": "goodbye",
+            "tag": "goodbye" ,
             "patterns": ["Bye", "See you later", "Goodbye", "Catch you later"],
             "responses": ["Goodbye!", "See you later!", "Take care!"]
         },
@@ -20,13 +20,17 @@
             "patterns": [],
             "responses": ["I'm not sure how to respond to that.", "Can you please rephrase?", "I don't have an answer for that."]
         },
-
         {
             "tag": "name",
             "patterns": ["what is your name", "what is your name?", "who are you","who are you?","can you tell me your name","tell me your name","what should I call you"],
             "responses": ["You can call me Hacker.", "I am an AI created to help you."]
-
+        },
+        {
+            "tag": "how_are_you",
+            "patterns": ["how are you", "how are you?", "how are you doing", "how are you doing?", "how is it going","are you doing well"],
+            "responses": ["I am doing great!","I'm fine, thank you!","I'm doing well. How can I help you?"]
         }
+        
 
         
 

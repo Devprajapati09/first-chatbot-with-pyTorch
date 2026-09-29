@@ -45,6 +45,13 @@ all_words = sorted(set(all_words))
 tags = sorted(set(tags))
 #print(tags)
 
+
+# i have added this line for checking the output of the all_words and tags and xy
+print(len(xy), "patterns")
+print(len(tags), "tags:", tags)
+print(len(all_words), "unique stemmed words:", all_words)
+
+
 X_train = []
 y_train = []
 
